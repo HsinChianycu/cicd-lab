@@ -1,9 +1,9 @@
 name: CI Pipeline
 
 on:
-  push:
+  push:  # 每次 push 時自動執行
     branches:
-      - '**'
+      - '**'  # 所有分支都觸發
 
 permissions:
   checks: write
@@ -13,7 +13,7 @@ permissions:
 jobs:
   ci:
     name: TypeCheck, Format & Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 在 GitHub 的 Ubuntu 伺服器上執行
 
     steps:
       - name: Checkout code
@@ -40,7 +40,7 @@ jobs:
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
+        if: always()  # 不管成功失敗都執行
         with:
           files: |
             test-results/**/*.xml
