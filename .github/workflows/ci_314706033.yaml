@@ -1,9 +1,9 @@
 name: CI Pipeline
 
 on:
-  push: 
+  push:
     branches:
-      - '**' 
+      - '**'
 
 permissions:
   checks: write
@@ -13,8 +13,8 @@ permissions:
 jobs:
   ci:
     name: TypeCheck, Format & Test
-    runs-on: ubuntu-latest 
-
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -42,5 +42,5 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()  
         with:
-          files: |
+          files:
             test-results/**/*.xml
