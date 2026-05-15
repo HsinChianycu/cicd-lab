@@ -14,7 +14,7 @@ jobs:
   ci:
     name: TypeCheck, Format & Test
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()  
+        if: always()
         with:
-          files:
+          files: |
             test-results/**/*.xml
