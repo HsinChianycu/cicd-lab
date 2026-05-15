@@ -21,4 +21,3 @@ export function buildApp(options: FastifyServerOptions = {}) {
 
   return app;
 }
-const num: number = "我是字串，不是數字"  // 故意型別錯誤
